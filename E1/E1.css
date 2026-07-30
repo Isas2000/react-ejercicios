@@ -1,0 +1,92 @@
+.cabecera {
+    background: linear-gradient(38deg, #9f57da, #200e4a);
+    color: #fafafa;
+    display: flex;
+}
+
+.cabecera__bloque1 {
+    height: 100vh;
+    width: 50%;
+    background-image: url("Imagenes/bri.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.cabecera__bloque2 {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    text-align: center;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 5vw;
+}
+
+.articulo {
+    max-width: 40em;
+    margin: 5em auto;
+    padding: 0 3em;
+}
+
+
+
+/* Correcciones para pantallas por debajo de 600px */
+
+@media (max-width: 37.5em) {
+    .cabecera {
+        flex-direction: column;
+    }
+
+    .cabecera__bloque1 {
+        width: 100%;
+        height: 250px;
+    }
+
+    .cabecera__bloque2 {
+        width: 100%;
+        height: auto;
+        padding: 3em;
+    }
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    color: #333333;
+    font: 1.4em/1.8 "EB Garamond", serif;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 37.5rem) {
+    body {
+        font-size: 1.2em;
+    }
+}
+
+h1 {
+    line-height: 1;
+    font-weight: 600;
+    font-style: italic;
+    opacity: 0.75;
+}
