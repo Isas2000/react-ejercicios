@@ -1,0 +1,84 @@
+/* E14.css */
+
+/* 1. Fondo general de la página con degradado azul */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #1a4a8d 0%, #0d2a54 100%);
+    color: white;
+    font-family: Arial, sans-serif;
+    /* O una fuente similar */
+}
+
+/* 2. El contenedor ahora usa Flexbox para alinear las barras horizontalmente */
+.contenedor {
+    padding: 4em 2em;
+    display: flex;
+    flex-direction: row;
+    /* Elementos en fila horizontal */
+    flex-wrap: wrap;
+    /* Permite que bajen si no caben */
+    justify-content: center;
+    /* Centra las barras en la pantalla */
+    gap: 20px;
+    /* Espacio entre las barras */
+}
+
+/* 3. Estilo de cada "barra" de explorador */
+.explorador {
+    /* Layout interno con Flexbox para alinear imagen y texto */
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente imagen y texto */
+
+    /* Dimensiones y Bordes */
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Fondo muy sutil y oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Borde claro y sutil */
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+
+    /* Tamaño de la barra */
+    width: 350px;
+    /* Ajusta este ancho según necesites */
+    height: 80px;
+    /* Altura fija para que todas se vean igual */
+    padding: 5px;
+    /* Espacio interno */
+    box-sizing: border-box;
+    /* Asegura que el padding no sume al tamaño total */
+}
+
+/* 4. Estilo de la imagen dentro de la barra */
+.explorador__imagen {
+    /* Mantener la forma cuadrada y el tamaño fijo */
+    width: 70px;
+    height: 70px;
+
+    border-radius: 6px;
+    /* Esquinas un poco más nítidas que la barra */
+    margin-right: 15px;
+    /* Espacio entre la imagen y el texto */
+
+    /* Asegurar que la imagen se vea bien dentro del cuadro */
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* 5. Estilo del nombre de la imagen */
+.explorador__nombre {
+    margin: 0;
+    /* Elimina márgenes por defecto */
+
+    /* Tipografía */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+
+    /* Alineación */
+    text-align: left;
+    /* Alineado a la izquierda, a la derecha de la imagen */
+    flex: 1;
+    /* Ocupa el espacio restante en la barra */
+}

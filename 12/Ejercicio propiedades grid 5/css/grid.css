@@ -1,0 +1,38 @@
+.contenedor {
+  padding: 1em;
+  display: grid;
+
+  
+
+
+
+  /* Esto genera un scroll horizontal porque ademas del 100% quotes: realiza el grip template colums se suma el 20px de gap:display:  */
+  /* grid-template-columns: 50% 12.5% 50% 12.5%;
+  grid-gap: 20px; */
+
+
+  /* Lo mejor es usar fr (fracciones) y se puede 
+  combinar con pixeles
+  grid-template-columns: 2fr 100px 3fr 1fr;*/
+  grid-gap: 20px;
+  /* grid-template-columns: 2fr 1fr 3fr 1fr;
+    grid-template-rows: 200px 1fr 2fr 3fr; */
+
+
+    /* otra forma de colocarlos es:  */
+    /* filas x columnas */
+    grid-template: 7fr 1fr 3fr 1fr/ 300px 1fr 2fr 3fr
+}
+
+.elemento {
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 1em;
+  /* margin: 2px; */
+  border-radius: 10px;
+  text-align: center;
+  color: #004e92;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.4;
+}

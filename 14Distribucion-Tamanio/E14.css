@@ -1,0 +1,63 @@
+/* --- CÓDIGO DE LA IMAGEN (SIN MODIFICAR) --- */
+
+.contenedor {
+    padding: 4em 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+
+    grid-auto-flow: dense;
+    /* Permite que se auto llenen los demas exploradores en los espacios vacios que se dejan */
+}
+
+.explorador {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.exp1 {
+    /* grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-end: 3; */
+
+    /* grid-row-start: span 2; */
+
+    grid-column: 2 / 3;
+    grid-row: 4 span / 5;
+
+}
+
+.explorador__imagen {
+    max-width: 100%;
+    overflow: hidden;
+    background: linear-gradient(38deg, #fc46ff, #ed7dce);
+    border-radius: 10px;
+    display: block;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    
+}
+
+.explorador__nombre {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    color: #fafafa;
+
+    /* --- AUTOCOMPLETADO (AÑADIDO A PARTIR DE AQUÍ) --- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 10;
+}
