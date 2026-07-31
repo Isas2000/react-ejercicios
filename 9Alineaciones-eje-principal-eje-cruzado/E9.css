@@ -1,12 +1,26 @@
 .contenedor {
     padding: 1em 1em;
     display: flex;
+    flex-wrap: wrap;
+   
+
+    /* Permite que se desplaze cada explorador cuando
+    ya no haya espacio */
+
+    /* flex-direction: column-reverse; */
     /* flex-direction: column; */
     border: 2px solid #ffff;
-    /* flex-grow: 1;
+    /* 
     justify-content: space-between;
     align-items: stretch;
     min-height: 100vh; */
+    
+
+    min-height: 100vh;
+    justify-content: flex-start; 
+    /* Ajusta todo el contenedor al comienzo osea izquierda */
+    flex-direction: column;
+    
 }
 
 .explorador {
@@ -21,12 +35,22 @@
     font-style: italic;
     font-size: 18px;
     line-height: 1.4;
+
+    /* flex-grow: 1;  */
+    /* permite que crezca cada que se extiende la pantalla */
+
+
+
     /* flex-shrink: 1; */
+    /* Hace lo contrario a grow, cada que la pantalla disminuye el elemento lo hace de la misma forma */
 }
 
-.exp4{
-    flex-basis: 200px;
-}
+
+
+
+
+
+
 
 
 

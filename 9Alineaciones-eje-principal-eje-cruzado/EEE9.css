@@ -1,0 +1,66 @@
+.contenedor {
+    padding: 1em 1em;
+    display: flex;
+    flex-wrap: wrap;
+
+
+    /* Permite que se desplaze cada explorador cuando
+    ya no haya espacio */
+
+    /* flex-direction: column-reverse; */
+    /* flex-direction: column; */
+    border: 2px solid #ffff;
+
+
+
+
+    /* justify-content: space-between;  la mejor combinacion es esta*/ 
+    /* justify-content: space-around; */
+    justify-content: space-between;
+    align-items: center;
+    /* align-items: baseline;
+    align-items: first baseline;
+    align-items: flex-start; */
+    
+
+    /* es el eje cruzado que toma el item y stretch permite que se espanda 
+    cada elemento */
+    /* align-items: stretch;
+    min-height: 100vh; */
+
+}
+
+.explorador {
+    /* box-sizing: border-box; */
+    background-color: rgba(250, 250, 250, 0.8);
+    margin: 1em;
+    padding: 2em;
+    border-radius: 10px;
+    text-align: center;
+    color: #004e92;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.4;
+
+    /* flex-grow: 1;  */
+    /* permite que crezca cada que se extiende la pantalla */
+
+
+
+    /* flex-shrink: 1; */
+    /* Hace lo contrario a grow, cada que la pantalla disminuye el elemento lo hace de la misma forma */
+}
+
+
+
+
+
+
+
+
+
+
+body {
+    background: linear-gradient(38deg, #000428, #004e92);
+}

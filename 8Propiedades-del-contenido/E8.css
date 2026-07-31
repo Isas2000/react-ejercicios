@@ -1,0 +1,76 @@
+.contenedor {
+    padding: 1em 1em;
+    display: flex;
+    flex-wrap: wrap;
+
+    /* Permite que se desplaze cada explorador cuando
+    ya no haya espacio */
+
+    /* flex-direction: column-reverse; */
+    /* flex-direction: column; */
+    border: 2px solid #ffff;
+    /* 
+    justify-content: space-between;
+    align-items: stretch;
+    min-height: 100vh; */
+}
+
+.explorador {
+    /* box-sizing: border-box; */
+    background-color: rgba(250, 250, 250, 0.8);
+    margin: 1em;
+    padding: 2em;
+    border-radius: 10px;
+    text-align: center;
+    color: #004e92;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.4;
+
+    /* flex-grow: 1;  */
+    /* permite que crezca cada que se extiende la pantalla */
+
+
+
+    /* flex-shrink: 1; */
+    /* Hace lo contrario a grow, cada que la pantalla disminuye el elemento lo hace de la misma forma */
+}
+
+
+
+/* este es un ejemplo: */
+.exp1 {
+    flex-basis: 200px;
+    /* Afecta al eje principal en este caso esta en filas y afecta al ancho de este */
+}
+
+
+.exp1 {
+    flex-shrink: 2;
+    /* Mientras mayor es el numero mas va a disminuir */
+}
+
+
+
+.exp3 {
+    flex-shrink: 0;
+    order: -1; 
+    /* Permite modificar el orden negativo adelante y positivo para atras */
+}
+
+.exp4 {
+    flex-grow: 1;
+    order: 1;
+}
+
+.exp2 {
+    flex-grow: 8;
+}
+
+
+
+
+body {
+    background: linear-gradient(38deg, #000428, #004e92);
+}

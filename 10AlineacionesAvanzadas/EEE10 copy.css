@@ -1,0 +1,68 @@
+/* Aqui se puede aplicar el marging auto para modifcar un elemento o varios 
+de un contenedor ya que no tiene un self propio que antes si se ha visto pero solo hay este 
+self en el eje cruzado, no en el principal, pero con el margin auto si es posible esto.  */
+
+
+.contenedor {
+    padding: 1em 1em;
+    display: flex;
+    height: 100vh;
+    border: 2px solid #ffff;
+    flex-wrap: wrap;
+
+
+    /* Permite que se desplaze cada explorador cuando
+    ya no haya espacio */
+
+    /* flex-direction: column-reverse; */
+    /* flex-direction: column; */
+    
+    /* flex-wrap: wrap; */
+
+                                                                        
+    align-items: center;
+    flex-direction: column;
+    
+    /* align-content: center; */
+    /* align-content: flex-start; */
+
+
+    /* es el eje cruzado que toma el item y stretch permite que se espanda 
+    cada elemento */
+    /* align-items: stretch;
+    min-height: 100vh; */
+
+}
+
+.explorador {
+    box-sizing: border-box;
+    background-color: rgba(250, 250, 250, 0.8);
+    margin: 1em;
+    padding: 2em;
+    border-radius: 10px;
+    text-align: center;
+    color: #004e92;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.4;
+
+    /* flex-grow: 1;  */
+    /* permite que crezca cada que se extiende la pantalla */
+
+
+
+    /* flex-shrink: 1; */
+    /* Hace lo contrario a grow, cada que la pantalla disminuye el elemento lo hace de la misma forma */
+}
+
+.exp4 {
+    margin-top: auto;
+
+    /* margin-top: auto; */
+    /* margin-bottom: auto; */
+}
+
+body {
+    background: linear-gradient(38deg, #000428, #004e92);
+}
