@@ -1,0 +1,44 @@
+
+.contenedor {
+  padding: 1em;
+  display: grid;
+  grid-gap: 20px;
+  grid-template: repeat(8, 200px) / repeat(4, 200px);
+  /* justify-content: space-evenly;
+  justify-content: space-around;
+  justify-content: flex-end; */
+
+  /* align-content: center; */
+
+  justify-content: space-between;
+  justify-items: center;
+  align-items: end;
+  height: 100vh;
+}
+
+ .elemento {
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  color: #004e92;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.4;
+ }
+
+ .elm3 {
+  background-color: #004e92;
+  color: #ffffff;
+  /* justify-self: start; */
+  justify-self: center;
+  align-self: center;
+  order: 1;
+ }
+
+
+
+
+
+

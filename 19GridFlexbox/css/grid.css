@@ -1,0 +1,41 @@
+:root{
+  --gap: 20px;
+}
+
+.contenedor-grid {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 20px;
+}
+
+.contenedor-flex {
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contenedor-flex .elemento {
+  background-color: #004e92;
+  color: white;
+  flex-basis: 300px;
+  margin: 20px;
+}
+
+.elemento {
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  color: #004e92;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+
+
+
+

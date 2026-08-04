@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid + Flexbox</title>
+  <link href="css/grid.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <header class="cabecera">
+    <h1>Combinación de CSS Grid y Flexbox</h1>
+  </header>
+
+  <main class="articulo">
+
+    <div class="articulo__entradilla">
+      <h2>Introducción</h2>
+
+      <p>
+        Este ejemplo demuestra cómo Grid se utiliza para la estructura
+        general de la página mientras Flexbox se encarga de alinear
+        elementos dentro de cada sección.
+      </p>
+    </div>
+
+    <figure class="imagen">
+      <img src="https://picsum.photos/1200/500" alt="Imagen de ejemplo">
+    </figure>
+
+    <p>
+      CSS Grid permite dividir la página en columnas y filas. En este
+      ejemplo el contenido principal siempre permanece centrado gracias a
+      la variable <strong>--cols</strong>, que cambia mediante Media
+      Queries.
+    </p>
+
+    <blockquote>
+      CSS Grid organiza la estructura de la página y Flexbox organiza los
+      elementos dentro de cada sección.
+    </blockquote>
+
+    <p>
+      Al aumentar el tamaño de la pantalla, las columnas laterales crecen
+      para mantener el contenido perfectamente centrado y con un ancho
+      máximo.
+    </p>
+
+    <p>
+      La cabecera y el pie ocupan todo el ancho utilizando
+      <code>grid-column: 1 / -1;</code>, mientras que el contenido se
+      coloca únicamente en las columnas centrales.
+    </p>
+
+  </main>
+
+  <footer class="footer">
+    <p>Ejemplo realizado con CSS Grid + Flexbox</p>
+  </footer>
+
+</body>
+
+</html>

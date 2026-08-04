@@ -1,0 +1,44 @@
+:root{
+  --gap: 20px;
+}
+
+.contenedor {
+  padding: 1em;
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+ .elemento {
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  color: #004e92;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.4;
+ }
+
+ .elm1 {
+  grid-column: span 2;
+ }
+
+ .elm2 {
+  grid-column: span 9;
+ }
+
+ .elm4 {
+  grid-column: span 6;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0,1fr));
+  grid-gap: var(--gap);
+  padding: 0;
+ }
+
+
+
+
+
+
