@@ -1,0 +1,512 @@
+/* ============================================================
+   TEMA 17: Custom properties globales (:root)
+   ============================================================ */
+:root {
+  --color-primario: #9f57da;
+  --color-secundario: #200e4a;
+  --color-texto: #1b1b1f;
+  --color-fondo: #fafafa;
+  --fuente: 'EB Garamond', serif;
+  --nav-alto: 4.5em;
+  --cols: 2; /* usada en el TEMA 9 (grid dinámico) */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.seccion {
+  max-width: 60em;
+  margin: 5em auto;
+  padding: 0 3em;
+}
+
+.seccion h2 {
+  border-bottom: 3px solid var(--color-primario);
+  padding-bottom: .3em;
+}
+
+/* ============================================================
+   TEMA 15: Navegación fixed con comportamiento headroom (JS)
+   ============================================================ */
+.navegacion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-alto);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  background: rgba(32, 14, 74, .92);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  z-index: 10;
+  transition: transform .35s ease;
+}
+
+.navegacion.oculto {
+  transform: translateY(-100%);
+}
+
+.navegacion__logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4em;
+  font-weight: 800;
+}
+
+.navegacion__logo span {
+  color: var(--color-primario);
+}
+
+.navegacion__lista {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navegacion__lista a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .95em;
+}
+
+/* ============================================================
+   TEMA 2: Flexbox — cabecera dividida en dos bloques
+   TEMA 1: viewport (100vh / 100vw dependen del meta viewport)
+   ============================================================ */
+.cabecera {
+  background: linear-gradient(38deg, var(--color-primario), var(--color-secundario));
+  color: #fafafa;
+  display: flex;
+}
+
+.cabecera__bloque1 {
+  height: 100vh;
+  width: 50%;
+  background-image: url("Imagenes/bri.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cabecera__bloque2 {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+}
+
+/* TEMA 3: tipografía fluida con clamp() (mínimo, preferido en vw, máximo) */
+.cabecera__bloque2 h1 {
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  line-height: 1.15;
+}
+
+/* ============================================================
+   TEMA 4: Artículo con ancho máximo + media query de apilado
+   ============================================================ */
+.articulo {
+  max-width: 40em;
+  margin: 5em auto;
+  padding: 0 3em;
+  line-height: 1.6;
+}
+
+@media (max-width: 37.5em) {
+  .cabecera {
+    flex-direction: column;
+  }
+
+  .cabecera__bloque1,
+  .cabecera__bloque2 {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+/* ============================================================
+   TEMA 11: shape-outside + border-radius (texto envuelve círculo)
+   ============================================================ */
+.envoltura-circular {
+  overflow: hidden;
+  margin: 2em 0;
+}
+
+.imagen-circular {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  shape-outside: circle(50%);
+  float: left;
+  margin: 0 1.5em 1em 0;
+}
+
+/* ============================================================
+   TEMA 14: column-count — columnas tipo periódico
+   ============================================================ */
+.columnas-periodico {
+  column-count: 2;
+  column-gap: 2em;
+  margin-top: 2em;
+}
+
+@media (max-width: 37.5em) {
+  .columnas-periodico {
+    column-count: 1;
+  }
+}
+
+/* ============================================================
+   TEMA 12: clip-path polygon (octágono) + shape-outside
+   ============================================================ */
+.seccion-octagono {
+  max-width: 60em;
+  margin: 5em auto;
+  padding: 0 3em;
+}
+
+.envoltura-octagono {
+  overflow: hidden;
+}
+
+.imagen-octagono {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  float: left;
+  margin: 0 1.5em 1em 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  shape-outside: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* ============================================================
+   TEMA 13: mix-blend-mode
+   ============================================================ */
+.seccion-blend {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: var(--color-secundario);
+  overflow: hidden;
+}
+
+.imagen-blend {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: hard-light;
+}
+
+.texto-blend {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: 2em;
+}
+
+/* ============================================================
+   TEMA 5: Grid básico con fr / px mezclados
+   ============================================================ */
+.grid-basico {
+  display: grid;
+  grid-template-columns: 2fr 100px 3fr 1fr;
+  gap: .5em;
+}
+
+.celda {
+  background: var(--color-primario);
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  border-radius: .3em;
+}
+
+/* ============================================================
+   TEMA 6 y 7: Grid responsive con repeat() + minmax()
+   auto-fill mantiene columnas "fantasma" vacías;
+   auto-fit las colapsa y estira las existentes.
+   ============================================================ */
+.galeria {
+  display: grid;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.galeria--fill {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.galeria--fit {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.galeria img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: .4em;
+}
+
+/* ============================================================
+   TEMA 8: Sistema Grid de 12 columnas
+   ============================================================ */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: .8em;
+}
+
+.col {
+  background: var(--color-secundario);
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  border-radius: .3em;
+}
+
+.col-4 { grid-column: span 4; }
+.col-6 { grid-column: span 6; }
+.col-12 { grid-column: span 12; }
+
+@media (max-width: 37.5em) {
+  .col-4,
+  .col-6 {
+    grid-column: span 12;
+  }
+}
+
+/* ============================================================
+   TEMA 9: Grid dinámico controlado por custom property --cols
+   ============================================================ */
+.grid-dinamico {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 1em;
+}
+
+@media (min-width: 37.5em) {
+  :root { --cols: 3; }
+}
+
+@media (min-width: 60em) {
+  :root { --cols: 6; }
+}
+
+/* ============================================================
+   TEMA 20: grid-template-areas (holy grail layout)
+   TEMA 10: object-fit dentro del layout
+   ============================================================ */
+.holy-grail {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "nav aside"
+    "footer footer";
+  grid-template-columns: 150px 1fr;
+  gap: .8em;
+}
+
+.hg-header, .hg-nav, .hg-main, .hg-aside, .hg-footer {
+  background: var(--color-primario);
+  color: #fff;
+  padding: 1em;
+  border-radius: .3em;
+}
+
+.hg-header { grid-area: header; }
+.hg-nav { grid-area: nav; background: var(--color-secundario); }
+.hg-main { grid-area: main; background: #6a3aa0; }
+.hg-aside { grid-area: aside; background: var(--color-secundario); }
+.hg-footer { grid-area: footer; background: var(--color-secundario); }
+
+.hg-imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: .3em;
+  margin-bottom: .5em;
+}
+
+@media (max-width: 37.5em) {
+  .holy-grail {
+    grid-template-areas:
+      "header"
+      "main"
+      "nav"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   TEMA 19: Flexbox con flex-wrap — tarjetas responsivas
+   ============================================================ */
+.tarjetas-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.tarjeta {
+  flex: 1 1 220px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: .4em;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.tarjeta img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.tarjeta p {
+  padding: .8em;
+  margin: 0;
+  text-align: center;
+}
+
+/* ============================================================
+   TEMA 16: position: sticky
+   ============================================================ */
+.pegajoso {
+  position: sticky;
+  top: var(--nav-alto);
+  background: var(--color-fondo);
+  padding: .3em 0;
+  z-index: 2;
+}
+
+.contenedor-scroll {
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: .3em;
+  padding: 0 1em;
+}
+
+.pegajoso-interno {
+  position: sticky;
+  top: 0;
+  background: var(--color-primario);
+  color: #fff;
+  margin: 0;
+  padding: .5em;
+}
+
+/* ============================================================
+   TEMA 18: aspect-ratio para medios responsivos
+   ============================================================ */
+.ratio-16-9 {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: .4em;
+}
+
+.ratio-16-9 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   TEMA 21: Hero con degradado + backdrop-filter
+   ============================================================ */
+.hero-gradiente {
+  position: relative;
+  min-height: 60vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+  overflow: hidden;
+}
+
+.hero-gradiente::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(3px);
+}
+
+.hero-gradiente__contenido {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: 2em;
+  max-width: 40em;
+}
+
+/* ============================================================
+   TEMA 22 y 23: animación al hacer scroll (JS) + accesibilidad
+   ============================================================ */
+.revelar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .6s ease, transform .6s ease;
+  background: var(--color-secundario);
+  color: #fff;
+  padding: 2em;
+  margin-bottom: 1em;
+  border-radius: .4em;
+}
+
+.revelar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TEMA 23: respeta la preferencia del usuario de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .revelar {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.pie {
+  background: var(--color-secundario);
+  color: #fff;
+  text-align: center;
+  padding: 2em 1em;
+}

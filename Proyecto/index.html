@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <!-- TEMA 1: Viewport responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Proyecto Integrador — 23 Técnicas Responsive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- TEMA 15: Navegación fixed + comportamiento headroom (oculta/muestra al hacer scroll) -->
+  <nav class="navegacion" id="nav">
+    <a href="#inicio" class="navegacion__logo">Britney<span>.</span></a>
+    <ul class="navegacion__lista">
+      <li><a href="#grid-basico">Grid</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#formas">Formas</a></li>
+      <li><a href="#layout">Layout</a></li>
+    </ul>
+  </nav>
+
+  <!-- TEMA 2: Flexbox — cabecera dividida en 2 bloques (50/50) -->
+  <header class="cabecera" id="inicio">
+    <div class="cabecera__bloque1"></div>
+    <div class="cabecera__bloque2">
+      <!-- TEMA 3: Tipografía fluida con vw/clamp() -->
+      <h1>Britney Spears: un ícono de la música y la moda</h1>
+    </div>
+  </header>
+
+  <!-- TEMA 4: Artículo con ancho máximo controlado + media queries de apilado -->
+  <article class="articulo">
+    <p>
+      Britney Spears es una cantante, compositora, bailarina y actriz estadounidense
+      reconocida como una de las artistas más influyentes de la música pop. Nació el
+      2 de diciembre de 1981 en McComb, Mississippi, y creció en Kentwood, Luisiana.
+    </p>
+    <p>
+      Su carrera dio un giro extraordinario en 1998 con el lanzamiento de
+      ...Baby One More Time, un éxito mundial que marcó el inicio de una nueva
+      generación del pop.
+    </p>
+
+    <!-- TEMA 11: shape-outside + border-radius circular (el texto envuelve la imagen redonda) -->
+    <div class="envoltura-circular">
+      <img src="Imagenes/circuloBri.jpeg" alt="Retrato circular de Britney Spears" class="imagen-circular" />
+      <p>
+        A lo largo de su carrera, Britney ha publicado numerosos álbumes de éxito
+        como Britney, In the Zone, Blackout, Circus, Femme Fatale y Glory. Sus
+        canciones, entre ellas Toxic, Womanizer, Stronger, Lucky, Circus y
+        Gimme More, han encabezado listas de popularidad en numerosos países y
+        continúan siendo escuchadas por millones de personas en todo el mundo.
+        Más allá de su música, ha sido una gran influencia en la moda: sus
+        presentaciones y videos musicales popularizaron estilos que marcaron
+        tendencia durante décadas.
+      </p>
+    </div>
+
+    <!-- TEMA 14: column-count — columnas tipo periódico -->
+    <div class="columnas-periodico">
+      <p>
+        Durante su trayectoria también enfrentó importantes desafíos personales y
+        profesionales. A pesar de ello, continuó demostrando su talento y
+        resiliencia, regresando a los escenarios con exitosas giras y una
+        residencia en Las Vegas que atrajo a miles de espectadores. Su historia
+        ha inspirado conversaciones sobre la salud mental, la libertad personal
+        y los derechos de los artistas, convirtiéndola en una figura relevante
+        más allá del ámbito musical. Actualmente es considerada una de las
+        artistas femeninas más exitosas de todos los tiempos, con más de 100
+        millones de discos vendidos en todo el mundo.
+      </p>
+    </div>
+  </article>
+
+  <!-- TEMA 12: clip-path polygon (octágono) + shape-outside combinados -->
+  <section class="seccion-octagono" id="formas">
+    <h2>Formas con <code>clip-path</code></h2>
+    <div class="envoltura-octagono">
+      <img src="Imagenes/octagono.jpeg" alt="Imagen recortada en forma de octágono" class="imagen-octagono" />
+      <p>
+        Esta sección demuestra cómo <code>clip-path: polygon()</code> recorta la
+        imagen en un octágono y cómo <code>shape-outside</code> obliga al texto a
+        fluir alrededor de esa misma silueta, en lugar de comportarse como un
+        rectángulo tradicional. Es una combinación clásica para diseño editorial
+        responsive.
+      </p>
+    </div>
+  </section>
+
+  <!-- TEMA 13: mix-blend-mode sobre imagen de concierto -->
+  <section class="seccion-blend">
+    <img src="Imagenes/concierto.jpg" alt="Concierto en vivo" class="imagen-blend" />
+    <div class="texto-blend">
+      <h2>mix-blend-mode: hard-light</h2>
+      <p>El texto y la imagen se fusionan usando modos de mezcla, igual que en la cabecera con degradado morado.</p>
+    </div>
+  </section>
+
+  <!-- TEMA 5: Grid básico con fr, px y % mezclados -->
+  <section class="seccion" id="grid-basico">
+    <h2>Grid básico (columnas mixtas)</h2>
+    <div class="grid-basico">
+      <div class="celda">2fr</div>
+      <div class="celda">100px</div>
+      <div class="celda">3fr</div>
+      <div class="celda">1fr</div>
+    </div>
+  </section>
+
+  <!-- TEMA 6 y 7: Grid auto-fill vs auto-fit con minmax -->
+  <section class="seccion" id="galeria">
+    <h2>Galería — <code>auto-fill</code> vs <code>auto-fit</code></h2>
+
+    <h3>auto-fill</h3>
+    <div class="galeria galeria--fill">
+      <img src="Imagenes/b1.jpeg" alt="Britney look 1" />
+      <img src="Imagenes/b4.jpeg" alt="Britney look 2" />
+      <img src="Imagenes/b6.jpeg" alt="Britney look 3" />
+      <img src="Imagenes/b8.jpeg" alt="Britney look 4" />
+    </div>
+
+    <h3>auto-fit</h3>
+    <div class="galeria galeria--fit">
+      <img src="Imagenes/b1.jpeg" alt="Britney look 1" />
+      <img src="Imagenes/b4.jpeg" alt="Britney look 2" />
+      <img src="Imagenes/b6.jpeg" alt="Britney look 3" />
+      <img src="Imagenes/b8.jpeg" alt="Britney look 4" />
+    </div>
+  </section>
+
+  <!-- TEMA 8: Grid de 12 columnas (sistema tipo Bootstrap) -->
+  <section class="seccion">
+    <h2>Sistema Grid de 12 columnas</h2>
+    <div class="grid-12">
+      <div class="col col-4">col-4</div>
+      <div class="col col-4">col-4</div>
+      <div class="col col-4">col-4</div>
+      <div class="col col-6">col-6</div>
+      <div class="col col-6">col-6</div>
+      <div class="col col-12">col-12</div>
+    </div>
+  </section>
+
+  <!-- TEMA 9: Grid con custom property --cols controlada por media query -->
+  <section class="seccion">
+    <h2>Grid dinámico con <code>var(--cols)</code></h2>
+    <div class="grid-dinamico">
+      <div class="celda">A</div>
+      <div class="celda">B</div>
+      <div class="celda">C</div>
+      <div class="celda">D</div>
+      <div class="celda">E</div>
+      <div class="celda">F</div>
+    </div>
+  </section>
+
+  <!-- TEMA 20: grid-template-areas (holy grail layout) + TEMA 10: object-fit -->
+  <section class="seccion" id="layout">
+    <h2>Layout con <code>grid-template-areas</code></h2>
+    <div class="holy-grail">
+      <header class="hg-header">Header</header>
+      <aside class="hg-nav">Nav</aside>
+      <main class="hg-main">
+        <img src="Imagenes/bri.jpg" alt="Artículo destacado" class="hg-imagen" />
+        <p>El <code>object-fit: cover</code> evita que la imagen se deforme al cambiar de tamaño el contenedor.</p>
+      </main>
+      <aside class="hg-aside">Aside</aside>
+      <footer class="hg-footer">Footer</footer>
+    </div>
+  </section>
+
+  <!-- TEMA 19: Flexbox wrap — tarjetas responsivas -->
+  <section class="seccion">
+    <h2>Flexbox con <code>flex-wrap</code></h2>
+    <div class="tarjetas-flex">
+      <div class="tarjeta">
+        <img src="Imagenes/circuloBri.jpeg" alt="Artículo 1" />
+        <p>Tarjeta 1</p>
+      </div>
+      <div class="tarjeta">
+        <img src="Imagenes/Amundsen.jpg" alt="Amundsen" />
+        <p>Tarjeta 2</p>
+      </div>
+      <div class="tarjeta">
+        <img src="Imagenes/Scott.jpg" alt="Scott" />
+        <p>Tarjeta 3</p>
+      </div>
+      <div class="tarjeta">
+        <img src="Imagenes/fondo.jpg" alt="Fondo" />
+        <p>Tarjeta 4</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMA 16: position: sticky en encabezados de sección -->
+  <section class="seccion">
+    <h2 class="pegajoso">Encabezado con position: sticky</h2>
+    <p>Al hacer scroll dentro de este bloque, el título permanece fijo en la parte superior del contenedor.</p>
+    <div class="contenedor-scroll">
+      <h3 class="pegajoso-interno">Sticky 1</h3>
+      <p>Contenido largo de prueba para forzar el scroll interno del contenedor...</p>
+      <h3 class="pegajoso-interno">Sticky 2</h3>
+      <p>Más contenido de prueba para forzar el scroll interno del contenedor...</p>
+    </div>
+  </section>
+
+  <!-- TEMA 18: aspect-ratio -->
+  <section class="seccion">
+    <h2><code>aspect-ratio</code> para medios responsivos</h2>
+    <div class="ratio-16-9">
+      <img src="Imagenes/bri.jpg" alt="Britney Spears" />
+    </div>
+  </section>
+
+  <!-- TEMA 21: hero con gradiente + backdrop-filter -->
+  <section class="hero-gradiente">
+    <div class="hero-gradiente__contenido">
+      <h2>Hero con degradado + <code>backdrop-filter</code></h2>
+      <p>100vh / 100vw combinados con un overlay translúcido desenfocado.</p>
+    </div>
+  </section>
+
+  <!-- TEMA 22 y 23: animación con scroll (IntersectionObserver) + prefers-reduced-motion -->
+  <section class="seccion">
+    <h2>Reveal al hacer scroll</h2>
+    <div class="revelar" data-revelar>Bloque 1</div>
+    <div class="revelar" data-revelar>Bloque 2</div>
+    <div class="revelar" data-revelar>Bloque 3</div>
+  </section>
+
+  <!-- TEMA 17: custom properties (:root) ya usadas en toda la hoja de estilos -->
+  <footer class="pie">
+    <p>Proyecto integrador — 23 técnicas de maquetación responsive con Grid, Flexbox, shapes y viewport.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
